@@ -13,7 +13,11 @@ struct WeatherByCityNameRequest {
 }
 
 struct HomeWeatherService: HomeWeatherFetchable {
-    func requestWeather(url: URL) -> AnyPublisher<Weather, APIError> {
+    func requestWeather(request: CityWeatherRequest) -> AnyPublisher<Weather, APIError> {
+        guard let url = cityWeatherEndpoint(queryItems: request.queryItems()).getUrlRequest() else {
+            return Fail(error: APIError.url("Could not create url"))
+                .eraseToAnyPublisher()
+        }
         return URLSession.shared.dataTaskPublisher(for: URLRequest(url: url))
             .mapError { error in
                 APIError.network(error.localizedDescription)
