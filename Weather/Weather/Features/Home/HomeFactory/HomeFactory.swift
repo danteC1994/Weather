@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
+
+class HomeFactory {
+    static func createHome() -> some View {
+        HomeView()
+    }
+}
