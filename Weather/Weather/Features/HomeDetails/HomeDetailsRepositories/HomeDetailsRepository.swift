@@ -37,7 +37,7 @@ struct CityWeatherRequest {
     }
 }
 
-class HomeRepository {
+class HomeDetailsRepository {
     private let weatherService: HomeWeatherFetchable
     
     private var anyCancellable = Set<AnyCancellable>()

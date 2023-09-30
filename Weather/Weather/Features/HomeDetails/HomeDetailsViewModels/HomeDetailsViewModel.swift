@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-class HomeViewModel: ObservableObject {
+class HomeDetailsViewModel: ObservableObject {
     @Published var maxTemp = ""
     private var anyCancellable = Set<AnyCancellable>()
 
-    private let homeRepository: HomeRepository
+    private let homeRepository: HomeDetailsRepository
 
-    init(homeRepository: HomeRepository) {
+    init(homeRepository: HomeDetailsRepository) {
         self.homeRepository = homeRepository
         setUpBindings()
     }
@@ -36,6 +36,6 @@ class HomeViewModel: ObservableObject {
     }
 
     func fetchWeather(for city: String) {
-        homeRepository.fetchWeather(request: .init(query: "London", appId: ""))
+        homeRepository.fetchWeather(request: .init(query: "London", appId: AppEnvironment.shared.appId))
     }
 }

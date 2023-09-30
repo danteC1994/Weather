@@ -11,9 +11,9 @@ import SwiftUI
 class HomeFactory {
     static func createHome() -> some View {
         let homeService = HomeWeatherService()
-        let homeRepository = HomeRepository(weatherService: homeService)
-        let homeViewModel = HomeViewModel(homeRepository: homeRepository)
+        let homeRepository = HomeDetailsRepository(weatherService: homeService)
+        let homeViewModel = HomeDetailsViewModel(homeRepository: homeRepository)
         
-        return HomeView(viewModel: homeViewModel)
+        return HomeDetailsView(viewModel: homeViewModel)
     }
 }
