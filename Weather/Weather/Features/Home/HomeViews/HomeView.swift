@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var viewModel: HomeViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ZStack{
+                Color.blue
+                    .ignoresSafeArea()
+                    List {
+                        ForEach(viewModel.cities) { city in
+                            CityRow(cityName: city.name)
+                                .onTapGesture {
+                                    // home details
+                                }
+                        }
+                        
+                    }
+                    .listStyle(PlainListStyle())
+                    .frame(maxHeight: .infinity)
+            }
+        }
+        .onAppear{
+            viewModel.getCities()
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(viewModel: HomeViewModel())
     }
 }

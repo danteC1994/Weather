@@ -35,6 +35,8 @@
 		81AC3A692AC85709008D77C1 /* BootstrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC3A682AC85709008D77C1 /* BootstrapperView.swift */; };
 		81AC3A6B2AC8575A008D77C1 /* BootstrapperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC3A6A2AC8575A008D77C1 /* BootstrapperFactory.swift */; };
 		81AC3A6F2AC8582A008D77C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC3A6E2AC8582A008D77C1 /* HomeView.swift */; };
+		81AC3A722AC85901008D77C1 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC3A712AC85901008D77C1 /* HomeViewModel.swift */; };
+		81AC3A762AC8706D008D77C1 /* CityRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AC3A752AC8706D008D77C1 /* CityRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		81AC3A682AC85709008D77C1 /* BootstrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapperView.swift; sourceTree = "<group>"; };
 		81AC3A6A2AC8575A008D77C1 /* BootstrapperFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapperFactory.swift; sourceTree = "<group>"; };
 		81AC3A6E2AC8582A008D77C1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		81AC3A712AC85901008D77C1 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		81AC3A752AC8706D008D77C1 /* CityRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +347,7 @@
 		81AC3A642AC85511008D77C1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				81AC3A702AC858F2008D77C1 /* HomeViewModel */,
 				81AC3A6D2AC85816008D77C1 /* HomeViews */,
 			);
 			path = Home;
@@ -362,8 +367,17 @@
 			isa = PBXGroup;
 			children = (
 				81AC3A6E2AC8582A008D77C1 /* HomeView.swift */,
+				81AC3A752AC8706D008D77C1 /* CityRow.swift */,
 			);
 			path = HomeViews;
+			sourceTree = "<group>";
+		};
+		81AC3A702AC858F2008D77C1 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				81AC3A712AC85901008D77C1 /* HomeViewModel.swift */,
+			);
+			path = HomeViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81AC3A762AC8706D008D77C1 /* CityRow.swift in Sources */,
 				81AC3A542AC79DB5008D77C1 /* SensitiveDataStorage.swift in Sources */,
 				81AC3A672AC856DA008D77C1 /* BootstrapViewModel.swift in Sources */,
 				81AC3A452AC27203008D77C1 /* HomeDetailsView.swift in Sources */,
@@ -515,6 +530,7 @@
 				81AC3A3A2AC2709D008D77C1 /* HomeWeatherServiceProtocol.swift in Sources */,
 				81AC3A522AC79D14008D77C1 /* SensitiveDataRepository.swift in Sources */,
 				81AC3A3E2AC271AC008D77C1 /* HomeDetailsRepository.swift in Sources */,
+				81AC3A722AC85901008D77C1 /* HomeViewModel.swift in Sources */,
 				81AC3A5C2AC7A286008D77C1 /* SensitiveDataServiceProvider.swift in Sources */,
 				81AC3A382AC267DB008D77C1 /* HomeModel.swift in Sources */,
 				81AC3A6F2AC8582A008D77C1 /* HomeView.swift in Sources */,
