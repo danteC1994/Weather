@@ -9,7 +9,6 @@ import Combine
 import Foundation
 
 struct CityWeatherRequest {
-    //q=London&mode=json&units=metric&APPID=0f12d7212e1a442cdd955a9f30cb1a3b
     let query: String
     let mode: Mode = .json
     let units: Units = .standard

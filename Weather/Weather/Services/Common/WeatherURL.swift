@@ -17,7 +17,6 @@ extension WeatherAPIBase {
     var scheme: String { "https" }
     var host: String { "api.openweathermap.org" }
     var basePath: String { "/data/2.5" }
-//        "https://api.openweathermap.org/data/2.5/forecast?q=London&mode=json&units=metric&APPID="
 }
 
 protocol WeatherEndpoint: WeatherAPIBase {

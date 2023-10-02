@@ -7,9 +7,11 @@
 
 import Combine
 
+//TODO: api key Should be retrieved from service or at least should be added as an info.plist item.
 class SensitiveDataService: SensitiveDataServiceProvider {
     func requestAppId() -> AnyPublisher<String, APIError> {
-        return Just("0f12d7212e1a442cdd955a9f30cb1a3b")
+        // Add your api key here
+        return Just("")
             .mapError{ error in
                 APIError.network(error.localizedDescription)
             }
