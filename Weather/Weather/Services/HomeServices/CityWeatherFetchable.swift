@@ -7,6 +7,6 @@
 
 import Combine
 
-protocol HomeWeatherFetchable {
+protocol CityWeatherFetchable {
     func requestWeather(request: CityWeatherRequest) -> AnyPublisher<Weather, APIError>
 }

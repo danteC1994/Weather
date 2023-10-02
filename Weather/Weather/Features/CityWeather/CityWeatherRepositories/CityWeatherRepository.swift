@@ -37,14 +37,14 @@ struct CityWeatherRequest {
     }
 }
 
-class HomeDetailsRepository {
-    private let weatherService: HomeWeatherFetchable
+class CityWeatherRepository {
+    private let weatherService: CityWeatherFetchable
     
     private var anyCancellable = Set<AnyCancellable>()
     private var cityWeatherSubject = PassthroughSubject<CityWeatherRequest, APIError>()
     private(set) var cityWeatherPublisher: AnyPublisher<Weather, APIError>
 
-    init(weatherService: HomeWeatherFetchable) {
+    init(weatherService: CityWeatherFetchable) {
         self.weatherService = weatherService
 
         cityWeatherPublisher = cityWeatherSubject

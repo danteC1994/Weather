@@ -1,5 +1,5 @@
 //
-//  HomeWeatherService.swift
+//  CityWeatherService.swift
 //  Weather
 //
 //  Created by dante canizo on 25/09/2023.
@@ -12,7 +12,7 @@ struct WeatherByCityNameRequest {
     let query: String
 }
 
-struct HomeWeatherService: HomeWeatherFetchable {
+struct CityWeatherService: CityWeatherFetchable {
     func requestWeather(request: CityWeatherRequest) -> AnyPublisher<Weather, APIError> {
         guard let url = cityWeatherEndpoint(queryItems: request.queryItems()).getUrlRequest() else {
             return Fail(error: APIError.url("Could not create url"))

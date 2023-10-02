@@ -9,6 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
+    @State var navigate: Bool = false
+    @State var selectedCity: String = ""
+
     var body: some View {
         NavigationView {
             ZStack{
@@ -18,15 +21,22 @@ struct HomeView: View {
                         ForEach(viewModel.cities) { city in
                             CityRow(cityName: city.name)
                                 .onTapGesture {
-                                    // home details
+                                    selectedCity = city.name
+                                    navigate = true
                                 }
                         }
-                        
                     }
                     .listStyle(PlainListStyle())
                     .frame(maxHeight: .infinity)
+                NavigationLink(
+                    destination: CityWeatherFactory.createCityWeather(for: selectedCity)
+                        .navigationBarTitle("")
+                        .navigationBarHidden(false),
+                    isActive: $navigate
+                ) {}
             }
         }
+        .accentColor(.black)
         .onAppear{
             viewModel.getCities()
         }
